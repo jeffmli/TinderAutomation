@@ -74,7 +74,7 @@ model.compile(loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 ```
-The results were as follows
+The resulting accuracy was about 67%. 
 
 
 **Transfer Learning using VGG19**: The problem with the 3-Layer model, is that I'm training the cNN on a SUPER small dataset: 3000 images. The best performing cNN's train on millions of images. 
