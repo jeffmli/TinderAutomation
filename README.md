@@ -6,39 +6,39 @@
 
 The other day, while I sat on the toilet to take a *poop*, I whipped out my phone, opened up the king of all toilet apps: Tinder. I clicked open the application and started the mindless swiping. *Left* *Right* *Left* *Right* *Left*.
 
-Now that we have dating apps, everyone suddenly has access to exponentially more people to date compared to the pre-app era. The Bay Area tends to lean more men than women. The Bay Area also attracts uber-successful, smart men from all around the world. As a big-foreheaded, 5 foot 9 asian man who doesn't take many pictures, there's fierce competition within the San Francisco dating sphere. 
+Now that we have dating apps, everyone suddenly has access to exponentially more people to date compared to the pre-app era. The Bay Area tends to lean more men than women. The Bay Area also attracts uber-successful, smart men from all around the world. As a big-foreheaded, 5 foot 9 asian man who doesn't take many pictures, there's fierce competition within the San Francisco dating sphere.
 
-From talking to female friends using dating apps, attractive females in San Francisco can get a match almost every other swipe. Assuming an attractive female could get 20 matches in an hour, they do not have the time to go out with every man that messages them. Obviously, they'll pick the man they like most based off their profile + initial message.
+From talking to female friends using dating apps, females in San Francisco can get a match almost every other swipe. Assuming females get 20 matches in an hour, they do not have the time to go out with every man that messages them. Obviously, they'll pick the man they like most based off their profile + initial message.
 
 I'm an above-average looking guy. However, in a sea of asian men, based purely on looks, my face wouldn't pop out the page. In a stock exchange, we have buyers and sellers. The top investors earn a profit through informational advantages. At the poker table, you become profitable if you have a skill advantage over the other people on your table. If we think of dating as a "competitive marketplace", how do you give yourself the edge over the competition? A competitive advantage could be: amazing looks, career success, social-charm, adventurous, proximity, great social circle etc.
 
-On dating apps, men & women who have a competitive advantage in photos & texting skills will reap the highest ROI from the app. As a result, I've broken the reward system from dating apps down to a formula:
+On dating apps, men & women who have a competitive advantage in photos & texting skills will reap the highest ROI from the app. As a result, I've broken down the reward system from dating apps down to a formula, assuming we normalize message quality from a 0 to 1 scale:
 
 <p align="center"><img src ="/img/formula.gif" /></p>
 
-The better photos/good looking you are you have, the less you need to write a quality message. If you're not attractive, it doesn't matter how good your message is, nobody will respond. If you're attractive, a witty message will significantly boost your ROI. If you don't do any swiping, you'll have zero ROI. 
+The better photos/good looking you are you have, the less you need to write a quality message. If you have bad photos, it doesn't matter how good your message is, nobody will respond. If you have great photos, a witty message will significantly boost your ROI. If you don't do any swiping, you'll have zero ROI.
 
-While I don't have the BEST pictures, my main bottleneck is that I just don't have a high-enough swipe volume. I just think that the mindless swiping is a waste of my time and prefer to meet women in person. However, the problem with this, is that this strategy severely limits the range of people that I could date. To solve this swipe volume problem, I decided to build an AI that automates tinder called: THE BAE-TA MINER.
+While I don't have the BEST pictures, my main bottleneck is that I just don't have a high-enough swipe volume. I just think that the mindless swiping is a waste of my time and prefer to meet people in person. However, the problem with this, is that this strategy severely limits the range of people that I could date. To solve this swipe volume problem, I decided to build an AI that automates tinder called: THE DATE-A MINER.
 
-The BAE-TA MINER is an artificial intelligence that learns the types of girls that I find attractive. Once it finished learning what I find attractive, the BAE-TA MINER will automatically swipe left or right on each image on my Tinder application. As a result, this will significantly increase swipe volume, therefore, increasing my projected Tinder ROI. Once I attain a match, the AI will automatically send a message to the matchee. 
+The DATE-A MINER is an artificial intelligence that learns the dating profiles I like. Once it finished learning what I like, the DATE-A MINER will automatically swipe left or right on each profile on my Tinder application. As a result, this will significantly increase swipe volume, therefore, increasing my projected Tinder ROI. Once I attain a match, the AI will automatically send a message to the matchee.
 
 While this doesn't give me a competitive advantage in photos, this does give me an advantage in swipe volume & initial message. Let's dive into my methodology:
 
 ## 2. Data Collection 
 
-To build the BAE-TA MINER, I needed to feed her A LOT of images. As a result, I accessed the Tinder API using [pynder](https://github.com/charliewolf/pynder). What this API allows me to do, is use Tinder through my terminal interface rather than the app:
+To build the DATE-A MINER, I needed to feed her A LOT of images. As a result, I accessed the Tinder API using pynder. What this API allows me to do, is use Tinder through my terminal interface rather than the app:
 
 <p align="center"><img src ="/img/sample_bot.png" /></p>
 
-I wrote a script where I could swipe through each profile, and save each image to a "likes" folder or a "dislikes" folder. I spent hours and hours swiping and collected about 10,000 images. 
+I wrote a script where I could swipe through each profile, and save each image to a "likes" folder or a "dislikes" folder. I spent hours and hours swiping and collected about 10,000 images.
 
-One problem I noticed, was I swiped left for about 80% of the women. As a result, I had about 8000 in dislikes and 2000 in the likes folder. This is a severely imbalanced dataset. Because I have such few images for the likes folder, the bae-ta miner won't be well-trained to know what I like. It'll only know what I dislike. 
+One problem I noticed, was I swiped left for about 80% of the profiles. As a result, I had about 8000 in dislikes and 2000 in the likes folder. This is a severely imbalanced dataset. Because I have such few images for the likes folder, the date-ta miner won't be well-trained to know what I like. It'll only know what I dislike.
 
-To fix this problem, I searched google "attractive women" and permutations of that phrase. Then I scraped these images off of Google and used these within my dataset. 
+To fix this problem, I found images on google of people I found attractive. Then I scraped these images and used them within my dataset.
 
 ## 3. Data Pre-Processing
 
-Now that I have the images, there are a number of problems. There is a wide range of images on Tinder. Some girls post images of them with their friends. Some images are zoomed out. Some images are low quality. How would the BAE-TA miner know where the girl was located?
+Now that I have the images, there are a number of problems. There is a wide range of images on Tinder. Some profiles have images with multiple friends. Some images are zoomed out. Some images are low quality. It would difficult to extract information from such a high variation of images.
 
 To solve this problem, I used a [Haars Cascade Classifier Algorithm](https://docs.opencv.org/3.4.1/d7/d8b/tutorial_py_face_detection.html) to extract the faces from images and then saved it.
 
@@ -46,7 +46,7 @@ The Algorithm failed to detect the faces for about 70% of the data. As a result,
 
 ## 4. Modeling
 
-To model this data, I used a [Convolutional Neural Network](http://cs231n.github.io/convolutional-networks/). Because my classification problem was extremely detailed & subjective, I needed an algorithm that could extract a large enough amount of features to detect a difference between the girls that I liked and disliked. A cNN was also built for image classification problems. 
+To model this data, I used a Convolutional Neural Network. Because my classification problem was extremely detailed & subjective, I needed an algorithm that could extract a large enough amount of features to detect a difference between the profiles I liked and disliked. A cNN was also built for image classification problems.
 
 To model this data, I used two approaches:
 
@@ -87,13 +87,13 @@ As a result, I used a technique called "Transfer Learning." Transfer learning, i
 
 **Recall:** 44.61%
 
-Accuracy is just predicting whether I liked or disliked the image correctly. 
+Accuracy is just predicting whether I liked or disliked the image correctly.
 
-Precision, tells us "out of all the girls that my algorithm predicted were true, how many did I actually like?" A low precision score would mean my algorithm wouldn't be useful since most of the matches I get are girls I don't like. 
+Precision, tells us "out of all the profiles that my algorithm predicted were true, how many did I actually like?" A low precision score would mean my algorithm wouldn't be useful since most of the matches I get are profiles I don't like.
 
-Recall, tells us "out of all the girls that I actually like, how many did the algorithm predict correctly?" This would tell me how picky the algorithm is. If this score is low, it means the algorithm is being too picky about the girls. 
+Recall, tells us "out of all the profiles that I actually like, how many did the algorithm predict correctly?" If this score is low, it means the algorithm is being overly picky.
 
-You can see here the algorithm predicting on a photo of Scarlet Johansson:
+You can see here the algorithm predicting on Scarlet Johansson:
 
 ![Alt text](/img/scarlet_v2.png?raw=true "Optional Title")
 
