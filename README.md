@@ -108,8 +108,6 @@ I intentionally added a 3 to 15 second delay on each swipe so Tinder wouldn't fi
 ## 6. Future Work
 I gave myself only a month of part-time work to complete this project. In reality, there's an infinite number of additional things I could do:
 
-**Body extract tool:** Use an algorithm to detect body size and images and use these images as training data. This would add another feature and create a stronger model.
-
 **Natural Language Processing on Profile text/interest**: I could extract the profile description and facebook interests and incorporate this into a scoring metric to develop more accurate swipes. 
 
 **Create a "total profile score"**: Rather than make a swipe decision off the first valid picture, I could have the algorithm look at every picture and compile the cumulative swipe decisions into one scoring metric to decide if she should swipe right or left. 
