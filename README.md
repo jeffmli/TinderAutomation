@@ -1,4 +1,6 @@
-# TinderAutomation
+# Overview
+
+This is the code for [this](https://youtu.be/okBOUrE8mC4) video on Youtube by Siraj Raval. Credits for this code go to Jeffmli. The picture classifier mentioned in the video is [here](https://github.com/zukako0930/tinder_face_classifier/blob/master/real_img_alert/CNN_easy-Copy1.ipynb). [This](https://github.com/Ilmanfordinner/tinder-pickup-line-suggester) generates pick up lines. And [this](https://github.com/beckyrussoniello/feminist-tinderbot) is an example of bio classification. 
 
 ![Alt text](/img/tinder.png?raw=true "Optional Title")
 
