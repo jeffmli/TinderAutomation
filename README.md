@@ -93,13 +93,13 @@ Precision, tells us "out of all the profiles that my algorithm predicted were tr
 
 Recall, tells us "out of all the profiles that I actually like, how many did the algorithm predict correctly?" If this score is low, it means the algorithm is being overly picky.
 
-You can see here the algorithm predicting on Scarlet Johansson:
+You can see here the algorithm predicting on Scarlett Johansson:
 
 ![Alt text](/img/scarlet_v2.png?raw=true "Optional Title")
 
 ## 5. Running the Bot
 
-Now that I have the algorithm built, I needed to connect it to the bot. Builting the bot wasn't too difficult. Here, you can see the bot in action: 
+Now that I have the algorithm built, I needed to connect it to the bot. Building the bot wasn't too difficult. Here, you can see the bot in action: 
 
 ![Alt text](/img/baetamining_bot.gif?raw=true "Optional Title")
 
@@ -144,7 +144,7 @@ If you want to train your own model, there are additional steps you'll need to f
 
 3. I wouldn't recommend training the cNN on your PC. You'll need to start a deep learning server using AWS or Google Cloud. On AWS, I used the Deep Learning AMI t2.medium. 
 
-4. Once you're done training, you need to export your model as an h5 file. Transport this h5 file into the bot. Within `bot.py`, find the `load_model()` function and plug the name of your file into that functino.
+4. Once you're done training, you need to export your model as an h5 file. Transport this h5 file into the bot. Within `bot.py`, find the `load_model()` function and plug the name of your file into that function.
 
 5. Voila, you should be good to go! 
 
