@@ -14,7 +14,7 @@ matplotlib == 1.4.3
 numpy == 1.14.2
 
 # image_processing.py: 1
-opencv_python == 3.4.0.12
+opencv_python == 3.4.7.28
 
 # bot.py: 3
 # img_scrape.py: 3
